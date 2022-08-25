@@ -1,5 +1,5 @@
 ##############
-# 输入：SEED第一天的数据，经过TQWT处理
+# 输入：经过TQWT处理的SEED第一天的数据
 # 输出：62个通道8个频段的DE特征,存储为 .mat
 ##############
 
@@ -60,14 +60,14 @@ def decompose(file, name):
             DE_sub7 = np.zeros(shape=[0], dtype=float)
 
             for index in range(num_sample):
-                DE_sub0 = np.append(DE_sub0, skew_X(sub0[index * 100:(index + 1) * 100]))
-                DE_sub1 = np.append(DE_sub1, skew_X(sub1[index * 100:(index + 1) * 100]))
-                DE_sub2 = np.append(DE_sub2, skew_X(sub2[index * 100:(index + 1) * 100]))
-                DE_sub3 = np.append(DE_sub3, skew_X(sub3[index * 100:(index + 1) * 100]))
-                DE_sub4 = np.append(DE_sub4, skew_X(sub4[index * 100:(index + 1) * 100]))
-                DE_sub5 = np.append(DE_sub5, skew_X(sub5[index * 100:(index + 1) * 100]))
-                DE_sub6 = np.append(DE_sub6, skew_X(sub6[index * 100:(index + 1) * 100]))
-                DE_sub7 = np.append(DE_sub7, skew_X(sub7[index * 100:(index + 1) * 100]))
+                DE_sub0 = np.append(DE_sub0, compute_DE(sub0[index * 100:(index + 1) * 100]))
+                DE_sub1 = np.append(DE_sub1, compute_DE(sub1[index * 100:(index + 1) * 100]))
+                DE_sub2 = np.append(DE_sub2, compute_DE(sub2[index * 100:(index + 1) * 100]))
+                DE_sub3 = np.append(DE_sub3, compute_DE(sub3[index * 100:(index + 1) * 100]))
+                DE_sub4 = np.append(DE_sub4, compute_DE(sub4[index * 100:(index + 1) * 100]))
+                DE_sub5 = np.append(DE_sub5, compute_DE(sub5[index * 100:(index + 1) * 100]))
+                DE_sub6 = np.append(DE_sub6, compute_DE(sub6[index * 100:(index + 1) * 100]))
+                DE_sub7 = np.append(DE_sub7, compute_DE(sub7[index * 100:(index + 1) * 100]))
 
             DE_sub0_smooth = smooth(DE_sub0,5)
             DE_sub1_smooth = smooth(DE_sub1,5)
@@ -220,7 +220,7 @@ import os
 import numpy as np
 
 file_path = 'G:\Paper-EEG Emotion\SEED-tqwt2-8band-q1r3j7-2\\'
-save_path = 'G:\Paper-EEG Emotion\SEED-tqwt2-8band-q1r3j7-2\Analysis-Trditional\SKEW0.5s-day1\\'
+save_path = 'G:\Paper-EEG Emotion\SEED-tqwt2-8band-q1r3j7-2\Analysis-Trditional\DE0.5s-day1\\'
 
 
 people_name = ['1_20131027', # 1
