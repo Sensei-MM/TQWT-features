@@ -29,7 +29,6 @@ for sub = 1:length(subnames)
               x = vid_eeg(channel , ((phase-1) * phase_len+1):phase*phase_len); 
               N = size(x,2);
               w = tqwt_radix2(x, Q, r, J);
-%               b = {2:3 , 4 , 5 ,6,7};  %tqwt1 tqwt subbands from which to reconstruct
               b = {1,2,3,4,5,6,7,8};%tqwt2
               y = tqwt_bands(b, w, Q, r, N);
               temp = [temp y];
