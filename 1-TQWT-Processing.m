@@ -4,7 +4,7 @@ band_num = 8;
 phase_len = 1024;
 Q = 1; r = 3; J = 7;
 path = 'D:\Dataset\SEED\Preprocessed_EEG\';
-save_path = 'H:\SEED-tqwt2-8band-q1r3j7\';
+save_path = 'G:\Paper-EEG Emotion\SEED-tqwt2-8band-q1r3j7-2\';
 file = dir(fullfile(path,'*.mat'));
 subnames = {file.name}';
 subnames = subnames(1:length(subnames)-1);
